@@ -75,9 +75,9 @@ public class Main {
         while (!exit) {
             switch (mainMenuDisplay()) {
                 case 1:
-                    List<File> fileList = Operations.list(rootDirectory);
-                    for (int i = 0; i < fileList.size(); i++) {
-                        System.out.println("(" + (i + 1) + ") " + fileList.get(i).getName());
+                    String [] fileList = Operations.list(rootDirectory);
+                    for (int i = 0; i < fileList.length; i++) {
+                        System.out.println("(" + (i + 1) + ") " + fileList[i]);
                     }
                     System.out.print("Press enter to continue.....");
                     scanner.nextLine();
@@ -107,8 +107,9 @@ public class Main {
                 case 4:
                     System.out.println("Enter file Name :");
                     String fileName = scanner.nextLine();
-                    if (Operations.search(fileName, rootDirectory)) {
-                        System.out.println("File is exist !!");
+                    int result = Operations.search(fileName, rootDirectory);
+                    if (result >= 0) {
+                        System.out.println("File is found at "+(result+1)+" !!");
                         scanner.nextLine();
                     } else {
                         System.out.println("File is not exist !!");
