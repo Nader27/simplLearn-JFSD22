@@ -1,0 +1,18 @@
+GIT URL: https://github.com/Nader27/simplLearn-JFSD22
+
+Sprint 1 : 2 Weeks
+
+	Design The Application
+	Implement The Console GUI
+	Implement The Add Function
+	Implement The Delete Function
+Sprint 2 : 2 Weeks
+
+	Implement The Search Algorithm
+	Implement The Sort Algorithm
+	Implement The List Function
+	Implement The Search Function
+	
+Sprint 3: 2 Weeks
+
+	UI Refactoring

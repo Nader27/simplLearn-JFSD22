@@ -1,12 +1,8 @@
 package com.LockedMe;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class Main {
 
@@ -16,16 +12,11 @@ public class Main {
 
     private static void clearConsole() {
         try {
-            final String os = System.getProperty("os.name");
-
-            if (os.contains("Windows")) {
-                Runtime.getRuntime().exec("cls");
-            } else {
+            if (System.getProperty("os.name").contains("Windows"))
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            else
                 Runtime.getRuntime().exec("clear");
-            }
-        } catch (final Exception e) {
-            //  Handle any exceptions.
-        }
+        } catch (IOException | InterruptedException ex) {}
     }
 
     private static void clearScanner() {
