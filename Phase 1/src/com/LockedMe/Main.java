@@ -54,6 +54,7 @@ public class Main {
                 selectedOption = scanner.nextInt();
             } catch (Exception e) {
                 System.out.println("Error " + e.getMessage());
+                scanner.nextLine();
             }
         }
         clearScanner();
